@@ -2,38 +2,20 @@
 
 let izbor = prompt("Напишете своя избор: камък,ножица или хартия");
 console.log(izbor);
-
 if(izbor === 'камък' || izbor === 'ножица' || izbor === 'хартия' ){
 	myArray = ['камък', 'ножица', 'хартия'];
 	var rand = myArray[Math.floor(Math.random() * myArray.length)];
-	console.log(rand);
-		if(rand === 'камък' && izbor === 'камък'){			
-			alert("Никой не печели");			
-		}
-		else if(rand === 'камък' && izbor === 'ножица'){
+	console.log(rand);	
+		if(rand === 'камък' && izbor === 'ножица' || rand === 'хартия' && izbor === 'камък' || rand === 'ножица' && izbor === 'хартия'){
 			alert("Компа печели,той избра " + rand);			
 		}
-		else if(rand === 'камък' && izbor === 'хартия'){
+		else if(rand === 'камък' && izbor === 'хартия' || rand === 'хартия' && izbor === 'ножица' || rand === 'ножица' && izbor === 'камък'){
 			alert("Ти би компа,той избра " + rand);			
-		}	
-		else if(rand === 'хартия' && izbor === 'хартия'){
-			alert("Никой не печели " + rand);			
+		}				
+		else{
+			alert("Никой не печели и двамата избрахте " + rand);			
 		}
-		else if(rand === 'хартия' && izbor === 'камък'){
-			alert("Компа печели,той избра " + rand);			
-		}
-		else if(rand === 'хартия' && izbor === 'ножица'){
-			alert("Ти би компа,той избра " + rand);			
-		}
-		else if(rand === 'ножица' && izbor === 'ножица'){
-			alert("Никой не печели " + rand);			
-		}
-		else if(rand === 'ножица' && izbor === 'хартия'){
-			alert("Компа печели,той избра " + rand);			
-		}
-		else if(rand === 'ножица' && izbor === 'камък'){
-			alert("Ти би компа,той избра " + rand);			
-		}
+		
 }
 else{
 	alert("Напиши го правилно");
